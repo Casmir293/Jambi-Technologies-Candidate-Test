@@ -24,9 +24,11 @@ const newTask = ref("");
 
 // Add task button function
 const handleSubmit = () => {
-  if (newTask.value.length > 0) {
+  const trimmedTaskValue = newTask.value.trim();
+
+  if (trimmedTaskValue.length > 0) {
     taskStore.addTask({
-      title: newTask.value,
+      title: trimmedTaskValue,
       isFav: false,
       id: Math.floor(Math.random() * 90000),
     });

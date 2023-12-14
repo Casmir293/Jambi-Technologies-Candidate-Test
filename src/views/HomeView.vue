@@ -8,6 +8,36 @@
 
     <!-- Main -->
     <main>
+      <!-- Task action feedback message -->
+      <section>
+        <transition name="feedback">
+          <div
+            v-if="taskStore.showSuccessMessage"
+            class="alert alert-success fixed-top text-center"
+          >
+            You added a new task.
+          </div>
+        </transition>
+
+        <transition name="feedback">
+          <div
+            v-if="taskStore.showCompletedMessage"
+            class="alert alert-info fixed-top text-center"
+          >
+            <b>Bravo!</b>You completed a task.
+          </div>
+        </transition>
+
+        <transition name="feedback">
+          <div
+            v-if="taskStore.showDeletedMessage"
+            class="alert alert-danger fixed-top text-center"
+            role="alert"
+          >
+            You deleted a task.
+          </div>
+        </transition>
+      </section>
       <!-- Theme prop -->
       <theme-comp @click="changeTheme" class="text-dark" />
 
@@ -97,7 +127,7 @@ main {
 }
 
 .dark-theme {
-  background-color: #6c757d;
+  background-color: #053662;
   color: #f5f5f5;
 }
 // Theme end
@@ -124,5 +154,24 @@ ul {
 
 .content {
   transition: color 1s ease, background-color 1s ease;
+}
+
+.feedback-enter-from {
+  opacity: 0;
+}
+
+.deleted-feedback-enter-to {
+  opacity: 1;
+}
+
+.feedback-enter-active,
+.feedback-leave-active {
+  transition: opacity 1s ease;
+}
+.feedback-leave-from {
+  opacity: 1;
+}
+.feedback-leave-to {
+  opacity: 0;
 }
 </style>
