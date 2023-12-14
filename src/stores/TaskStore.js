@@ -8,4 +8,16 @@ export const useTaskStore = defineStore("taskStore", {
       { id: 3, title: "buy some bread", isFav: true },
     ],
   }),
+
+  getters: {
+    totalTask: (state) => {
+      return state.tasks.length;
+    },
+  },
+
+  actions: {
+    addTask(task) {
+      this.tasks.push(task);
+    },
+  },
 });

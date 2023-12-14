@@ -8,24 +8,17 @@
 
     <!-- Main -->
     <main>
-      <!-- Add Task Input -->
-      <section @click="changeTheme">
-        <theme-comp />
-      </section>
+      <!-- Theme prop -->
+      <theme-comp @click="changeTheme" />
 
       <div class="rounded-3 shadow bg-light p-3 pb-1 p-sm-5 pb-sm-3 mb-2">
-        <input
-          class="form-control"
-          type="text"
-          name="task"
-          placeholder="Enter a Task"
-        />
-        <br />
-
-        <!-- Add Task Button -->
-        <button class="btn btn-sm btn-primary mb-3">Add Task</button>
+        <!-- Task input Prop -->
+        <task-input />
 
         <!-- List of Tasks -->
+        <p class="text-dark">
+          Task left: <b>{{ taskStore.totalTask }}</b>
+        </p>
         <ul class="p-0">
           <li v-for="task in taskStore.tasks">
             <div
@@ -40,7 +33,7 @@
                 </div>
                 <div class="col-md-2 col-lg-1">
                   <button class="btn btn-sm btn-danger mt-2 mt-sm-0">
-                    Remove
+                    Delete
                   </button>
                 </div>
               </div>
@@ -61,6 +54,7 @@ import HeaderComp from "@/components/HeaderComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import ThemeComp from "@/components/ThemeComp.vue";
 import TaskDetails from "@/components/TaskDetails.vue";
+import TaskInput from "@/components/TaskInputComp.vue";
 import { useTaskStore } from "@/stores/TaskStore";
 import { ref, watch } from "vue";
 
@@ -79,7 +73,7 @@ watch(theme, (newTheme) => {
   isDarkTheme.value = newTheme === "dark";
 });
 
-// Pinia
+// Pinia store
 const taskStore = useTaskStore();
 </script>
 

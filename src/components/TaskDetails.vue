@@ -1,10 +1,7 @@
 <template>
   <div class="task">
     <h4>{{ task.title }}</h4>
-    <div class="icons">
-      <!-- <font-awesome-icon icon="fa-solid fa-trash" />
-      <font-awesome-icon icon="fa-solid fa-heart" /> -->
-    </div>
+    <div class="icons"></div>
   </div>
 </template>
 
