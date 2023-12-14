@@ -31,14 +31,4 @@ const changeTheme = () => {
   right: 15px;
   cursor: pointer;
 }
-
-.light-theme {
-  background-color: #f5f5f5;
-  color: #000;
-}
-
-.dark-theme {
-  background-color: #000;
-  color: #f5f5f5;
-}
 </style>

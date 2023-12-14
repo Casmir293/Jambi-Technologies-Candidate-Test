@@ -8,16 +8,24 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
-library.add(faMoon, faSun);
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+library.add(faMoon, faSun, faTrash, faHeart);
 
+// CSS
 import "./assets/main.css";
 
+// Vue
 import { createApp } from "vue";
+import App from "./App.vue";
+
+// Pinia
 import { createPinia } from "pinia";
 
-import App from "./App.vue";
+// Router
 import router from "./router";
 
+// Mount App
 const app = createApp(App);
 
 app.component("font-awesome-icon", FontAwesomeIcon);
