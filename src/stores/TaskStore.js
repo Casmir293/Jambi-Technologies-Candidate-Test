@@ -19,5 +19,14 @@ export const useTaskStore = defineStore("taskStore", {
     addTask(task) {
       this.tasks.push(task);
     },
+
+    deleteTask(id) {
+      this.tasks = this.tasks.filter((t) => t.id !== id);
+    },
+
+    toggleFav(id) {
+      const task = this.tasks.find((t) => t.id === id);
+      task.isFav = !task.isFav;
+    },
   },
 });

@@ -6,11 +6,10 @@ import "@popperjs/core";
 //  Font Awesome
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSquare } from "@fortawesome/free-solid-svg-icons";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-library.add(faMoon, faSun, faTrash, faHeart);
+import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
+library.add(faMoon, faSun, faSquare, faSquareCheck);
 
 // CSS
 import "./assets/main.css";

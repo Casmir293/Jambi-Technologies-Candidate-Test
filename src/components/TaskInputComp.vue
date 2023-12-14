@@ -22,6 +22,7 @@ import { ref } from "vue";
 const taskStore = useTaskStore();
 const newTask = ref("");
 
+// Add task button function
 const handleSubmit = () => {
   if (newTask.value.length > 0) {
     taskStore.addTask({

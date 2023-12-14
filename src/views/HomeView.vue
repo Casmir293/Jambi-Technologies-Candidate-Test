@@ -9,7 +9,7 @@
     <!-- Main -->
     <main>
       <!-- Theme prop -->
-      <theme-comp @click="changeTheme" />
+      <theme-comp @click="changeTheme" class="text-dark" />
 
       <div class="rounded-3 shadow bg-light p-3 pb-1 p-sm-5 pb-sm-3 mb-2">
         <!-- Task input Prop -->
@@ -26,16 +26,16 @@
             >
               <div class="row">
                 <div class="my-1 col-md-10 col-lg-11">
-                  <input class="form-check-input" type="checkbox" />
+                  <!-- <input
+                    class="form-check-input"
+                    type="checkbox"
+                    @click="taskStore.toggleFav(task.id)"
+                  /> -->
                   <label class="form-check-label ps-2"
                     ><task-details :task="task"
                   /></label>
                 </div>
-                <div class="col-md-2 col-lg-1">
-                  <button class="btn btn-sm btn-danger mt-2 mt-sm-0">
-                    Delete
-                  </button>
-                </div>
+                <div class="col-md-2 col-lg-1"></div>
               </div>
             </div>
           </li>
@@ -57,6 +57,8 @@ import TaskDetails from "@/components/TaskDetails.vue";
 import TaskInput from "@/components/TaskInputComp.vue";
 import { useTaskStore } from "@/stores/TaskStore";
 import { ref, watch } from "vue";
+
+const props = defineProps(["task"]);
 
 const theme = ref(localStorage.getItem("theme") || "dark");
 
