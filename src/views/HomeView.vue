@@ -16,8 +16,13 @@
         <task-input />
 
         <!-- List of Tasks -->
-        <p class="text-dark">
-          Task left: <b>{{ taskStore.totalTask }}</b>
+        <p class="text-dark d-flex justify-content-between">
+          <span
+            ><b>Completed Task: </b><i>{{ taskStore.totalIsFav }}</i></span
+          >
+          <span>
+            <b>Total Task: </b><i>{{ taskStore.totalTask }}</i></span
+          >
         </p>
         <ul class="p-0">
           <li v-for="task in taskStore.tasks">
@@ -26,14 +31,7 @@
             >
               <div class="row">
                 <div class="my-1 col-md-10 col-lg-11">
-                  <!-- <input
-                    class="form-check-input"
-                    type="checkbox"
-                    @click="taskStore.toggleFav(task.id)"
-                  /> -->
-                  <label class="form-check-label ps-2"
-                    ><task-details :task="task"
-                  /></label>
+                  <div class="ps-2"><task-details :task="task" /></div>
                 </div>
                 <div class="col-md-2 col-lg-1"></div>
               </div>

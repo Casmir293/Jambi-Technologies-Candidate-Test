@@ -3,15 +3,18 @@
     <div class="icons d-inline">
       <font-awesome-icon
         icon="fa-solid fa-square-check"
+        size="xl"
         @click="taskStore.toggleFav(task.id)"
         :class="{ active: task.isFav }"
       />
     </div>
-    <h4 class="d-inline ps-2">{{ task.title }}</h4>
+    <h5 class="d-inline ps-2 main-task" @click="taskStore.toggleFav(task.id)">
+      {{ task.title }}
+    </h5>
     <br />
 
     <button
-      class="btn btn-sm btn-danger mt-2 mt-sm-0"
+      class="btn btn-sm btn-danger mt-3"
       @click="taskStore.deleteTask(task.id)"
     >
       Delete
@@ -29,10 +32,17 @@ const taskStore = useTaskStore();
 
 <style lang="scss" scoped>
 svg {
-  color: blue;
+  opacity: 0.2;
+  transition: 1s;
+  cursor: pointer;
 }
 
-.icon svg .active {
-  color: red;
+.active {
+  opacity: 1;
+  transition: 1s;
+}
+
+.main-task {
+  cursor: pointer;
 }
 </style>
