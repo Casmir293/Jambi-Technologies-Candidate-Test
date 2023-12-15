@@ -9,7 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faMoon, faSquare } from "@fortawesome/free-solid-svg-icons";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
-library.add(faMoon, faSun, faSquare, faSquareCheck);
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+library.add(faMoon, faSun, faSquare, faSquareCheck, faHeart);
 
 // CSS
 import "./assets/main.css";
