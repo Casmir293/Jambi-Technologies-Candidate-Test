@@ -42,12 +42,15 @@ export const useTaskStore = defineStore("taskStore", {
     toggleFav(id) {
       const task = this.tasks.find((t) => t.id === id);
       task.isFav = !task.isFav;
-      this.showCompletedMessage = true;
 
-      // feedback message for 1 second
-      setTimeout(() => {
-        this.showCompletedMessage = false;
-      }, 1000);
+      if (task.isFav) {
+        this.showCompletedMessage = true;
+
+        // feedback message for 1 second
+        setTimeout(() => {
+          this.showCompletedMessage = false;
+        }, 1000);
+      }
     },
   },
 });

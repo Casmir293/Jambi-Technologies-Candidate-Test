@@ -1,6 +1,6 @@
 <template>
   <section
-    class="container content"
+    class="content px-3 px-sm-5"
     :class="{ 'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme }"
   >
     <!-- Header -->
@@ -41,17 +41,21 @@
       <!-- Theme prop -->
       <theme-comp @click="changeTheme" class="text-dark" />
 
-      <div class="rounded-3 shadow bg-light p-3 pb-1 p-sm-5 pb-sm-3 mb-2">
+      <div
+        class="rounded-3 shadow bg-light p-3 pb-1 p-sm-5 pb-sm-3 mb-2 task-frame"
+      >
         <!-- Task input Prop -->
         <task-input />
 
         <!-- List of Tasks -->
         <p class="text-dark d-flex justify-content-between">
           <span
-            ><b>Completed Task: </b><i>{{ taskStore.totalIsFav }}</i></span
+            ><b>Completed Task: </b
+            ><i class="text-success fs-3">{{ taskStore.totalIsFav }}</i></span
           >
           <span>
-            <b>Total Task: </b><i>{{ taskStore.totalTask }}</i></span
+            <b>Total Task: </b
+            ><i class="text-danger fs-3">{{ taskStore.totalTask }}</i></span
           >
         </p>
         <ul class="p-0">
@@ -88,7 +92,7 @@ import { ref, watch } from "vue";
 
 const props = defineProps(["task"]);
 
-const theme = ref(localStorage.getItem("theme") || "dark");
+const theme = ref(localStorage.getItem("theme") || "light");
 
 const isDarkTheme = ref(theme.value === "dark");
 
@@ -122,7 +126,7 @@ main {
 
 // Theme start
 .light-theme {
-  background-color: #f5f5f5;
+  background-color: #d6d6d6;
   color: #000;
 }
 
@@ -173,5 +177,20 @@ ul {
 }
 .feedback-leave-to {
   opacity: 0;
+}
+
+//  Media Query for Ipads
+@media (min-width: 576px) {
+  .task-frame {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+//  Media Query for Laptops
+@media (min-width: 992px) {
+  .task-frame {
+    width: 60%;
+  }
 }
 </style>
