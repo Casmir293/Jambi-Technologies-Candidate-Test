@@ -1,35 +1,75 @@
-# Jambi Technologies Candidate Test
+# Jambi Technologies Candidate Test (Task Management App)
 
-This template should help get you started developing with Vue 3 in Vite.
+This task management app is a 24-hour job interview project developed for Jambi Technologies. It is built using Vue 3, Pinia, Bootstrap, and SCSS. The app provides a comprehensive solution for managing tasks efficiently. This website can be accessed at [jambitech.casmir.dev](https://jambitech.casmir.dev).
 
-## Recommended IDE Setup
+![Task Manager](/jambitech.png)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Features
 
-## Customize configuration
+GENERAL FEATURES
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **Light and Dark Theme:** The app offers both light and dark themes to enhance user experience and cater to different preferences.
 
-## Project Setup
+- **Task Tracking:**
+
+- View the total number of tasks.
+- Track the number of completed tasks.
+
+- **Pop-Up Feedback:**
+
+- Receive instant feedback messages through pop-ups when performing actions like adding, marking as completed, or deleting a task.
+
+- **Task Management**
+  1- View a List of Tasks: Easily browse and manage your tasks in a user-friendly interface.
+
+2- Add a New Task: Quickly add new tasks to the list, providing a seamless way to keep track of your to-dos.
+
+3- Mark a Task as Completed: Indicate task completion to stay organized and monitor progress.
+
+4- Delete a Task: Remove unwanted or completed tasks effortlessly to maintain a clutter-free task list.
+
+5- Mark a Task as Favorite: Highlight important tasks by marking them as favorites, making them stand out in the list.
+
+6- Add Due Date to Task: Assign due dates to tasks for better time management and organization.
+
+## Getting Started
+
+- Clone the Repository:
+
+```sh
+git clone https://github.com/Casmir293/Jambi-Technologies-Candidate-Test.git
+```
+
+```sh
+cd task-management-app
+```
+
+- Install Dependencies:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+- Run the App:
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+Clink the provided link and enjoy the app.
 
-```sh
-npm run build
-```
+## Technologies Used
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+- **Vue 3:** A progressive JavaScript framework for building user interfaces.
 
-```sh
-npm run test:unit
-```
+- **Pinia:** State management for Vue.js applications.
+
+- **Bootstrap:** A popular CSS framework for building responsive and stylish web applications.
+
+- **SCSS:** A preprocessor scripting language that is interpreted or compiled into CSS.
+
+## Acknowledgments
+
+- Special thanks to Jambi Technologies for the opportunity to work on this project during the job interview process.
+
+- Shoutout to the Vue.js, Pinia, Bootstrap, and SCSS communities for their excellent tools and resources.
